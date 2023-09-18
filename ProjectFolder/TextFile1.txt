@@ -1,0 +1,26 @@
+﻿In main i want to apply a simple menu logic. 
+Users to be able to add information in this case being their age and then get either the standard price or youngdiscount or olderdiscount. 
+We need the prices to be added on top of eachother in @MathHandler
+ConsoleUI and IUI Will be used to create simplified UI for the menu and text and taking in input and a uint.
+
+1. Tell user that they are in main menu
+2. Create a switch statment shell with at least 2 statements
+3. create an infinite iteration, something that does not end until we tell it to end. 
+4. build out the menu with choice to call upon functions.
+
+Menu choices1 : Youth or Retired
+1. User inputs an age
+2. Program converts this string into an int 
+3. Program checks if user is a youth (below 20) *
+4. If true program shall print out( Teen price: 80kr)
+5. If Else checks program if person is above 65 
+6. If 65 = true Give RetiredPrice 90kr)
+7. Else the user is provided standardprice 120kr
+
+Bonus goals: We want the functionality calculate the price for the entire group. 
+add it alternatively in the main menu as a 2nd case. It's allowed to use a submenu for this.
+We apply first the amount of visits who are going to the movie.
+Then ask the age of each person. And then write a total sum in the console which will contain: Amount of visitors and TotalSum.
+
+
+Clear Ticket will need to utilize .Substring to retrieve the list array in order to delete 
