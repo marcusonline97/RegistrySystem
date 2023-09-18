@@ -26,7 +26,7 @@ namespace RS
 
                     break;
                 case SelectionScreen.ClearTicket:
-                    Console.WriteLine(""); //Here we will see the added tickets in case if we want to delete one 
+                    Console.WriteLine("Unfinished Code. To be added"); //Here we will see the added tickets in case if we want to delete one 
                     break;
                 case SelectionScreen.ReviewTicket: //Fetch the added ticket from the list currently added
                                                    //tickets and their individual costs & total sum.
@@ -58,8 +58,6 @@ namespace RS
                             break;
                         case 4:screen = SelectionScreen.EndApplication;
                             break;
-                            default: Console.WriteLine("big banana");
-                            break;
 
                     }
                     break;
@@ -86,6 +84,7 @@ namespace RS
 
                     break;
                 case SelectionScreen.EndApplication:
+                    Environment.Exit(0);
                     break;
                 default:
                     break;
@@ -106,7 +105,7 @@ namespace RS
         public void ReviewTicket() //here we are displaying the total outcome of the tickets
         {
             int total = CalculateTotal(ageList.Count, ageList);
-            Console.WriteLine($"{total}");
+            Console.Write($"{total}");
             Console.ReadLine();
             screen = SelectionScreen.MainMenu;
         }
