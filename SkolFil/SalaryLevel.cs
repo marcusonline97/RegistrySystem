@@ -8,5 +8,6 @@ namespace RegistrySystem.SkolFil
 {
     internal class SalaryLevel
     {
+        
     }
 }

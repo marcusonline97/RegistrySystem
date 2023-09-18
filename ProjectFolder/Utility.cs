@@ -23,25 +23,7 @@ namespace RegistrySystem.ProjectFolder
            
         }
 
-        public static string RemoveVowels(string input)
-        {
-            char[] chars = new char[] {'B','A','D'};
-            foreach (char c in chars)
-            {
-                input = input.Remove(c);
-            }
 
-
-            return input;
-
-        }
-
-        public static void UsingStringEquality()
-        {
-            string name1 = "A";
-            string name2 = "B";
-
-        }
     }
 
 }

@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace RegistrySystem.SkolFil
 {
-    internal class Employee
+    public class Employee
     {
+      
     }
 }

@@ -1,4 +1,5 @@
 ﻿using RegistrySystem.ProjectFolder;
+using System.Diagnostics;
 using System.Xml.Schema;
 
 namespace RS
@@ -7,6 +8,7 @@ namespace RS
     {
         public bool IsRunning = true;
         public SelectionScreen screen = SelectionScreen.MainMenu;
+        private List<int> ageList = new List<int>();
         public void PrintCurrentMenu()
         {
             Console.Clear();
@@ -65,20 +67,23 @@ namespace RS
                     Console.WriteLine("How many of you are visiting: \n ");
                     string visitors = Console.ReadLine();
                     int amountofVisitors = int.Parse(visitors);
-                    List<int>ageList = new List<int>();
+                    ageList.Clear();
                     for (int i = 0; i < amountofVisitors; i++)
                     {
                         Console.WriteLine("|Visitor " + i+1 + "| age: |");
                         string age = Console.ReadLine();
                         int a = int.Parse(visitors);
-                        ageList.Add (a);
+                        ageList.Add(a);
                         
                     }
+                    this.screen = SelectionScreen.MainMenu;
                     break;
                 case SelectionScreen.ClearTicket:
                     Utility.ClearTicket();
                     break;
                 case SelectionScreen.ReviewTicket:
+                    ReviewTicket();
+
                     break;
                 case SelectionScreen.EndApplication:
                     break;
@@ -87,27 +92,34 @@ namespace RS
             }
         }
 
-        public int CalculateTotal(int amountOfVisitor, List<int>userAge,int total = 0)
+        public int CalculateTotal(int amountOfVisitor, List<int>userAge)
         {
+            int total = 0;
             for (int i = 0; i < amountOfVisitor; i++)
             {
-                total += CalculateDiscount(userAge[i]);
+                total += GetDiscountedPrice(userAge[i]);
 
             }
             return total;
 
         }
-
-
-        /// <summary>
-        ///  User puts in an integer. The integer gets determined by an if or switch statement if below 20 then young discount,
-        /// if above 65 then old discount. Any other valid int will result in default price. Anything that is not supported like a string or a double will result in an
-        /// error message and send them back to the same page.
-        /// </summary>
-        /// <returns></returns>
-        public int CalculateDiscount(int age)
+        public void ReviewTicket() //here we are displaying the total outcome of the tickets
         {
+            int total = CalculateTotal(ageList.Count, ageList);
+            Console.WriteLine($"{total}");
+            Console.ReadLine();
+            screen = SelectionScreen.MainMenu;
+        }
 
+
+    /// <summary>
+    ///  User puts in an integer. The integer gets determined by an if or switch statement if below 20 then young discount,
+    /// if above 65 then old discount. Any other valid int will result in default price. Anything that is not supported like a string or a double will result in an
+    /// error message and send them back to the same page.
+    /// </summary>
+    /// <returns></returns>
+    public int GetDiscountedPrice(int age)
+        {
 
             if (age < 20) // The Teen Tier Price
             {
@@ -122,7 +134,7 @@ namespace RS
             {
                 return (90);//Default price
             }
-
+            
         }
 
 

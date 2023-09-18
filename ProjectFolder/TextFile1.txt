@@ -24,3 +24,6 @@ Then ask the age of each person. And then write a total sum in the console which
 
 
 Clear Ticket will need to utilize .Substring to retrieve the list array in order to delete 
+
+2023-09-18: I am starting to feel like i have overcomplicated the project a slight bit. It needs some adjustments but i did't keep up with my teachers 
+words of advice when using User interfaces so i am not too well versed on it.

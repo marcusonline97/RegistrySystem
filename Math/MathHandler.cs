@@ -16,13 +16,6 @@ namespace RegistrySystem.Math
         {
             return 0;
         }
-
-        public static void BigBanana()
-        {
-            var sampleString = "baceiouxyz";
-
-            Console.WriteLine(sampleString + " => " + Utility.RemoveVowels(sampleString));
-        }
         public static int CalculateYearlyWageExpressionBodied(int monthlyWage, int numbersofMonthsWorked, int bonus) => monthlyWage * numbersofMonthsWorked + bonus;
 
 
